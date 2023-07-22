@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a{
+  text-decoration: teal;
+  color: black;
+  
+}
+a:hover{
+  color: cornflowerblue;
+  text-decoration: underline;
+  font-size: 18px;
+  transition: 1s;
+}
+a:hover::after{
+  font-size: large;
+}
