@@ -25,3 +25,20 @@ a:hover{
 a:hover::after{
   font-size: large;
 }
+.chip{
+  background-color: white;
+  width: 58px;
+  height:20px;
+  border-radius: 30px;
+  color: black;
+  display: flex;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  align-items: center;
+  justify-content: center;
+}
+.chip:hover{
+  color:white;
+  background-color: black;
+}
