@@ -1,0 +1,74 @@
+import data from "/home/kamohelo/Desktop/ILL BE OFFLINE FOR A WHILE/Maths/src/data/notes"
+import { IconButton , Paper , } from "@mui/material"
+import { ArrowBackIosRounded } from "@mui/icons-material"
+import React from "react"
+import face from "/home/kamohelo/Desktop/ILL BE OFFLINE FOR A WHILE/Maths/src/Thumbnails/igcseface.png"
+import Download from "../LGCSE/DownloadLgcse"
+
+export default function NotesCollection(){
+    const [download , setDownload] = React.useState(false)
+    const [file , setFile ] = React.useState({
+        dir:"",
+        name:""
+    })
+
+    const triggerDownloadPage = (location , name) => {
+        setDownload(true)
+        setFile(
+            (file) => ({
+                ...file,
+                dir : location,
+                name : name
+            })
+        )
+    }
+    return(
+
+        <div>
+            <h1 style={{position:"fixed",left:10,top:0,marginBottom:"60px"}}>Notes</h1>
+
+            {
+                download ?
+                <div style={{display:"flex",alignItems:"center",marginTop:"60px"}}>
+                    <IconButton sx={{color:"black"}} href="/notes">
+                        <ArrowBackIosRounded/>
+                       <p style={{fontSize:"14px"}}>Back</p>
+                    </IconButton>
+                </div>
+                    :
+                <div style={{display:"flex",alignItems:"center",marginTop:"60px"}}>
+                    <IconButton sx={{color:"black"}} href="/papers">
+                        <ArrowBackIosRounded/>
+                        <p style={{fontSize:"14px"}}>Back</p>
+                    </IconButton>
+                </div>
+            }
+            {
+                download ? 
+                <Download title={file.name}  confirm={file.dir}/> : 
+                <>
+                    <div>
+                        {
+                            data.map((paper) => {
+                                return(
+            
+                                    <div style={{display:"flex",alignItems:"center",justifyContent:"center",margin:"10px"}} onClick={()=>triggerDownloadPage(paper.dir,paper.title)}>
+                                        {            
+                                            <Paper sx={{width:"100%"}} >
+                                                <img src={face} alt="Thumbnail" style={{width:"50%",height:"50%"}}/>
+                                                <p style={{textAlign:"center",fontWeight:"bolder"}}>{paper.title}</p>
+                                                <p style={{textAlign:"center",fontWeight:"bolder"}}><small><i>{paper.sub} <br />~Highly Recommended</i></small></p>
+                                                <p><small>{paper.author}</small></p>
+                                            </Paper>
+                                        }
+
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </>
+            }
+        </div>
+    )
+}

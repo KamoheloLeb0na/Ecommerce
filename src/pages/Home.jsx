@@ -1,19 +1,19 @@
 import {Typography,Avatar,Toolbar,AppBar,IconButton,Paper} from "@mui/material"
 import {Menu , ForwardRounded} from "@mui/icons-material"
 
-import head from "./head.png"
+import lgcseface from "../Thumbnails/lgcseface.png"
 import SimpleBottomNavigation from "../components/bottomnav"
+import { Link } from "react-router-dom"
+import Toppapers from "./Toppaper"
 export default function Home(){
+    
     return(
         <div>
-            <AppBar position="fixed" sx={{backgroundColor:"transparent",boxShadow:"none",}}>
+            <AppBar  sx={{backgroundColor:"white",boxShadow:"none",}}>
                 <Toolbar>
                     <div style={{width:"100%"}}>
-                        <IconButton sx={{backgroundColor:"black"}}>
-                            <Menu sx={{color:"white",backgroundColor:"black",borderRadius:"360px",height:"30px",width:"30px"}}/>
-                        </IconButton>
+                        <p style={{color:"black"}}> <i>~Extended Maths~</i> </p>
                     </div>
-
                     <IconButton>
                         <Avatar  sx={{width:"35px",height:"35px"}}/>
                     </IconButton>
@@ -21,9 +21,6 @@ export default function Home(){
             </AppBar>
 
             <div className="body" style={{marginTop:"75px",marginLeft:"10px",marginRight:"20px"}}>
-                <Typography variant="h5" sx={{fontWeight:"bold"}}>Welcome,</Typography>
-                <Typography variant="h7" sx={{fontWeight:"bold",color:"gray"}}>My Fashion App</Typography>
-
                 <div className="searchField" style={{marginTop:"20px",marginBottom:"20px"}}>
                     <input type="text" style={{width:"100%",height:"40px",borderRadius:"20px",border:'solid',borderWidth:"1px",borderColor:"lightgray",backgroundColor:"lightgray",fontFamily:"Quicksand",fontSize:"18px",textAlign:"center"}} placeholder="Search..."/>
                 </div>
@@ -31,12 +28,24 @@ export default function Home(){
 
             <div className="homeProductDisplay" style={{margin:"10px",}}>
                 <Paper sx={{height:"80px",display:"flex"}}>
-                    <img src={head} alt=""  style={{width:"auto",height:"78px",marginLeft:"10px"}}/>
+                    <img src={lgcseface} alt=""  style={{width:"60%",height:"60%",marginLeft:"10px"}}/>
 
-                    <div style={{width:"100%",alignItems:"start",justifyContent:"end",display:"flex",flexDirection:"column",marginLeft:"10px"}}>
-                        <Typography>Dre Beats</Typography>
-                        <Typography>Black & Red</Typography>
-                        <Typography>M234</Typography>
+                    <div style={{width:"100%",alignItems:"start",justifyContent:"center",display:"flex",flexDirection:"column",marginLeft:"10px"}}>
+                        <Typography>Paper 2</Typography>
+                        <Typography>2022</Typography>
+                    </div>
+
+                    <div style={{alignItems:"center",justifyContent:"center",display:"flex",margin:"5px"}}>
+                        <ForwardRounded/>
+                    </div>
+                </Paper>
+                <br />
+                <Paper sx={{height:"80px",display:"flex"}}>
+                    <img src={lgcseface} alt=""  style={{width:"60%",height:"60%",marginLeft:"10px"}}/>
+
+                    <div style={{width:"100%",alignItems:"start",justifyContent:"center",display:"flex",flexDirection:"column",marginLeft:"10px"}}>
+                        <Typography>Paper 4</Typography>
+                        <Typography>2022</Typography>
                     </div>
 
                     <div style={{alignItems:"center",justifyContent:"center",display:"flex",margin:"5px"}}>
@@ -48,28 +57,33 @@ export default function Home(){
                     <Typography variant="h6">Categories</Typography>
                     <br />
                     <div className="chips" style={{display:"flex",justifyContent:"space-evenly",alignItems:"center"}}>
+                        <Link to="/papers">
                         <div className="chip">
-                            <p>Dress</p>
-                        </div>
+                            <p>Paper2</p>
+                        </div></Link>
 
+                        <Link to="/papers">
                         <div className="chip">
-                            <p>Jackets</p>
+                            <p>Paper4</p>
                         </div>
+                        </Link>
 
+                        <Link to="/papers">
                         <div className="chip">
-                            <p>Jeans</p>
+                            <p>Notes</p>
                         </div>
+                        </Link>
 
-                        <div className="chip">
-                            <p>Shoes</p>
-                        </div>
                     </div>
                     <br />
-                    
-                    <div className="categories">
-                    
-                    </div>
                 </div>
+
+
+            <div className="Toppapers">
+                <Typography variant="h6">Top Papers</Typography>
+                <Toppapers/>
+            </div>
+
             </div>
 
             <div className="footer">
