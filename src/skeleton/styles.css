@@ -1,0 +1,24 @@
+.skeleton{
+    animation: skeleton-loading 2s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+    0%{
+        background-color: hsl(200 , 20% ,70%);
+    }
+    100%{
+        background-color: hsl(200 , 20% ,98%);
+    }
+}
+.card{
+    width: 400px;
+    height: 200px;
+    border-radius: "360px";
+    background-color: whitesmoke;
+}
+.image{
+    border-radius: 10px;
+    width:80%;
+    margin: 10px;
+    background-color:"black";
+    height: 20px;;
+}

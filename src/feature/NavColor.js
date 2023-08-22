@@ -5,10 +5,9 @@ const NavSlice = createSlice (
         name :'nav',
         initialState:{
             value:{
-                home:"true",
-                papers:"false",
-                notifications:"false",
-                profile:"false"
+                progress:0,
+                buffer:10,
+                remove:false
             }
         },
         reducers:{

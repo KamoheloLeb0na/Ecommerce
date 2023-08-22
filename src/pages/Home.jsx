@@ -1,14 +1,22 @@
 import {Typography,Avatar,Toolbar,AppBar,IconButton,Paper} from "@mui/material"
 import {Menu , ForwardRounded} from "@mui/icons-material"
-
+import Timer from "../Timer/Timer"
 import lgcseface from "../Thumbnails/lgcseface.png"
+import SplashScreen from "../Splash/SplashScreen"
 import SimpleBottomNavigation from "../components/bottomnav"
 import { Link } from "react-router-dom"
 import Toppapers from "./Toppaper"
+import { useSelector } from "react-redux"
 export default function Home(){
-    
+    const state = useSelector((state) => state.remove.value)
     return(
+        
         <div>
+            {
+                state.remove ? 
+                <SplashScreen/>
+                :
+                <>
             <AppBar  sx={{backgroundColor:"white",boxShadow:"none",}}>
                 <Toolbar>
                     <div style={{width:"100%"}}>
@@ -21,9 +29,7 @@ export default function Home(){
             </AppBar>
 
             <div className="body" style={{marginTop:"75px",marginLeft:"10px",marginRight:"20px"}}>
-                <div className="searchField" style={{marginTop:"20px",marginBottom:"20px"}}>
-                    <input type="text" style={{width:"100%",height:"40px",borderRadius:"20px",border:'solid',borderWidth:"1px",borderColor:"lightgray",backgroundColor:"lightgray",fontFamily:"Quicksand",fontSize:"18px",textAlign:"center"}} placeholder="Search..."/>
-                </div>
+                <Timer/>
             </div>
 
             <div className="homeProductDisplay" style={{margin:"10px",}}>
@@ -57,22 +63,22 @@ export default function Home(){
                     <Typography variant="h6">Categories</Typography>
                     <br />
                     <div className="chips" style={{display:"flex",justifyContent:"space-evenly",alignItems:"center"}}>
-                        <Link to="/papers">
+                        <a href="/papers">
                         <div className="chip">
                             <p>Paper2</p>
-                        </div></Link>
+                        </div></a>
 
-                        <Link to="/papers">
+                        <a href="/papers">
                         <div className="chip">
                             <p>Paper4</p>
                         </div>
-                        </Link>
+                        </a>
 
-                        <Link to="/papers">
+                        <a href="/papers">
                         <div className="chip">
                             <p>Notes</p>
                         </div>
-                        </Link>
+                        </a>
 
                     </div>
                     <br />
@@ -89,6 +95,9 @@ export default function Home(){
             <div className="footer">
                 <SimpleBottomNavigation/>
             </div>
+            </>}
         </div>
+        
     )
+        
 }

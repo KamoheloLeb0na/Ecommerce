@@ -4,6 +4,10 @@ import { ArrowBackIosRounded } from "@mui/icons-material"
 import face from "../Thumbnails/lgcseface.png"
 import Download from "../AllPaper/LGCSE/DownloadLgcse"
 import React from "react"
+import SplashScreen from "../Splash/SplashScreen"
+import { useSelector } from "react-redux"
+import {remove} from "../feature/RemoveSplash"
+import { useDispatch } from "react-redux"
 
 export default function Toppapers(){
     const [download,setDownload] = React.useState(false)
@@ -22,6 +26,10 @@ export default function Toppapers(){
             })
         )
     }
+    const dispatch = useDispatch()
+    function change(){
+        dispatch(remove({"remove":true}))
+    }
 
     const Top = data.map((paper) => {
         return(
@@ -35,13 +43,15 @@ export default function Toppapers(){
             </Grid>
         )
     })
-    
+
     return(
         <div>
+            {
+        <>
             <div style={{display:"flex",alignItems:"center"}}>
             {
               download &&  
-              <IconButton sx={{color:"black"}} onClick={() => setDownload(false)}>
+              <IconButton sx={{color:"black"}} onClick={() => {setDownload(false)}}>
                     <ArrowBackIosRounded/>
                     <p style={{fontSize:"14px"}}>Back</p>
                 </IconButton>
@@ -49,11 +59,13 @@ export default function Toppapers(){
             </div>
             {
                 download ? 
-                    <Download confirm={details.dir} title={details.title}/>
+                     <Download confirm={details.dir} title={details.title}/>
                     :
                     <Grid container spacing={1} marginBottom={10}>
                         {Top}
                     </Grid>
+            }
+        </>
             }
         </div>
     )
