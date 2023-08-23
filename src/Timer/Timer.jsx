@@ -57,6 +57,7 @@ export default function Timer(){
 
         <div>
             <p style={{fontWeight:"bolder"}}>Hours</p>
+            <div style={{width:"5px"}}></div>
             <div  style={{display:"flex",alignItems:"center"}}>
             <h1 className="code" style={{fontSize:"40px"}}>{timerHours}</h1>
             <div style={{width:"5px"}}></div>
@@ -64,7 +65,7 @@ export default function Timer(){
             <div style={{width:"5px"}}></div>
             </div>
         </div>
-
+        <div style={{width:"10px"}}></div>
         <div>
             <p style={{fontWeight:"bolder"}}>Minutes</p>
             <div style={{width:"80px"}}></div>

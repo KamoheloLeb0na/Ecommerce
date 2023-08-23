@@ -4,8 +4,7 @@ import { ArrowBackIosRounded } from "@mui/icons-material"
 import face from "../Thumbnails/lgcseface.png"
 import Download from "../AllPaper/LGCSE/DownloadLgcse"
 import React from "react"
-import SplashScreen from "../Splash/SplashScreen"
-import { useSelector } from "react-redux"
+
 import {remove} from "../feature/RemoveSplash"
 import { useDispatch } from "react-redux"
 
