@@ -5,6 +5,18 @@ export default function Skeleton(){
             <div class="image skeleton"></div>
             <div class="image skeleton"></div>
             <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
+            <div class="image skeleton"></div>
             <p class="details"></p>
         </div>
     )

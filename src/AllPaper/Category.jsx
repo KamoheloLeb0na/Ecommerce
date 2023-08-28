@@ -1,12 +1,19 @@
-import { List , ListItem , IconButton  } from "@mui/material"
+import { List , ListItem , IconButton, Container  } from "@mui/material"
 import SimpleBottomNavigation from "../components/bottomnav"
 import { ArrowBackIosRounded } from "@mui/icons-material"
-import { Link } from "react-router-dom"
-
+import { useSelector } from "react-redux"
+import Load from "../animation"
+import Skeleton from "../skeleton/skeleton"
 export default function Category(){
+    const state = useSelector((state) => state.remove.value)
     const menu = ["LGCSE Paper 2" , "LGCSE Paper 4" , "Save My Exams Paper 2" , "Save My Exams Paper 4" , "IGCSE Topical Question Paper 2" , "IGCSE Topical Questions Paper 4",]
     return(
         <>
+        {
+    state.remove ?
+    <Load/>
+    :
+        <Container>
             <h1 style={{marginLeft:"10px"}}>Categories</h1>
             <div style={{display:"flex",alignItems:"center"}}>
                 <IconButton sx={{color:"black"}} href="/">
@@ -33,6 +40,8 @@ export default function Category(){
             <br />
             <br />
             <SimpleBottomNavigation/>
+        </Container>
+        }
         </>
     )
 }

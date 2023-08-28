@@ -3,22 +3,24 @@
 }
 @keyframes skeleton-loading {
     0%{
-        background-color: hsl(200 , 20% ,70%);
+        background-color: hsl(200, 9%, 13%);
     }
     100%{
-        background-color: hsl(200 , 20% ,98%);
+        background-color: hsl(210, 7%, 71%);
     }
 }
+
 .card{
+    margin:0px;
     width: 400px;
-    height: 200px;
+    height: max-content;
     border-radius: "360px";
-    background-color: whitesmoke;
+    background-color: white;
 }
 .image{
-    border-radius: 10px;
-    width:80%;
-    margin: 10px;
+    border-radius: 20px;
+    width:95%;
+    margin: 15px;
     background-color:"black";
-    height: 20px;;
+    height: 50px;;
 }

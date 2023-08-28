@@ -1,9 +1,9 @@
+import image from "/home/kamohelo/Desktop/ILL BE OFFLINE FOR A WHILE/Maths/src/Splash/spinner.gif"
 
 import React from "react";
-import {remove} from "./feature/RemoveSplash"
+import {remove} from "/home/kamohelo/Desktop/ILL BE OFFLINE FOR A WHILE/Maths/src/feature/RemoveSplash"
 import { useSelector , useDispatch } from "react-redux";
-import Skeleton from "./skeleton/skeleton";
-export default function Load(){
+export default function Loading(){
 
   const [progress, setProgress] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
@@ -27,7 +27,7 @@ export default function Load(){
   React.useEffect(() => {
     const timer = setInterval(() => {
       progressRef.current();
-    }, 150);
+    }, 200);
 
     return () => {
       clearInterval(timer);
@@ -35,11 +35,8 @@ export default function Load(){
   }, []);
   
     return(
-      <>
-        <h1>Fetching List...</h1>
-        <div style={{display:"flex",alignItems:"center",justifyContent:'center',width:"100%"}}>
-            <Skeleton/>
+        <div style={{display:"flex",alignItems:"center",justifyContent:'center',marginTop:"60%",backgroundColor:"lightblack",width:"100%"}}>
+            <img src={image} alt="" style={{width:"60%"}}/>
         </div>
-      </>
     )
 }

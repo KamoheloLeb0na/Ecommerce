@@ -26,7 +26,7 @@ export default function SplashScreen(){
   React.useEffect(() => {
     const timer = setInterval(() => {
       progressRef.current();
-    }, 200);
+    }, 150);
 
     return () => {
       clearInterval(timer);

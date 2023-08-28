@@ -18,7 +18,7 @@ export default function App(){
     <div style={{width:"100%",overflowX:"hidden"}}>
       <Container sx={{display:{xs:"none",sm:"flex"}}}>
         <div style={{display:"flex",flexDirection:"column"}}>
-          <code><h1>Website is only availible on Mobile and Tablet</h1></code>
+          <code><h1>Website is only availible on Mobile.</h1></code>
           <code>If you really need it you could resize the window to be Tablet size</code>
         </div>
       </Container>
